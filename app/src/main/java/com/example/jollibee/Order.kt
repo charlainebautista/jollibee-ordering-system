@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.jollibee.databinding.FragmentOrderBinding
 
 
 class Order : Fragment() {
 
     private lateinit var binding: FragmentOrderBinding
-    private lateinit var listAdapter : Adapter
+    private lateinit var listAdapter : MVMenuAdapter
+    private lateinit var orderViewModel: OrderViewModel
     private var dataset = mutableListOf<Data>()
     override fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -21,11 +24,13 @@ class Order : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
        binding = FragmentOrderBinding.inflate(inflater, container, false)
-        listAdapter = Adapter(dataset, {})
-        dataset.add(Data(name = "Lorem Ipsum", price = 99))
-        dataset.add(Data(name = "Lorem Ipsum dolor sit amet", price = 99))
+        orderViewModel = ViewModelProvider(requireActivity())[OrderViewModel::class.java]
+        listAdapter = MVMenuAdapter(orderViewModel.orderList, {})
+
         listAdapter.notifyDataSetChanged()
         binding.cartList.adapter = listAdapter
+
+        binding.placeOrderButton.setOnClickListener{findNavController().navigate(R.id.reciept)}
 
 
         return binding.root

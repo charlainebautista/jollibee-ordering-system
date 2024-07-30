@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.jollibee.databinding.CartBinding
 import com.example.jollibee.databinding.FragmentRecieptBinding
 
@@ -17,7 +18,7 @@ class Reciept : Fragment() {
     ): View? {
         binding = FragmentRecieptBinding.inflate(inflater, container, false)
 
-
+        binding.orderAgainButton.setOnClickListener{findNavController().navigate(R.id.home2)}
 
 
         return binding.root

@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_order_to_home2"
             app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_order_to_reciept"
+            app:destination="@id/reciept" />
+    </fragment>
+    <fragment
+        android:id="@+id/reciept"
+        android:name="com.example.jollibee.Reciept"
+        android:label="fragment_reciept"
+        tools:layout="@layout/fragment_reciept" >
+        <action
+            android:id="@+id/action_reciept_to_home2"
+            app:destination="@id/home2" />
     </fragment>
 </navigation>

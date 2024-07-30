@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jollibee.databinding.CartBinding
 
-class Adapter(
+class MVMenuAdapter(
     private val dataset: MutableList<Data> = mutableListOf(),
     private val onDataClick : (data:Data)-> Unit
 ) : RecyclerView.Adapter<ViewHolder>() {
