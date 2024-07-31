@@ -4,6 +4,6 @@ class Data (
     var name : String? = null,
     var price : Int = 0,
     var quantity: Int = 0,
-    val imageResId: Int
+    var imageResId: Int = R.mipmap.ic_launcher
 
 )

@@ -7,7 +7,8 @@ import com.example.jollibee.databinding.CartBinding
 
 class MVMenuAdapter(
     private var items: MutableList<Data>,
-    private val onQuantityChanged: (MutableList<Data>) -> Unit
+    private val onQuantityChanged: (MutableList<Data>) -> Unit,
+    var observer : (data: Data) -> Unit
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,11 +18,11 @@ class MVMenuAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = items[position]
-        holder.bind(data) {
+        holder.bind(data, {
 
             notifyDataSetChanged()
             onQuantityChanged(items)
-        }
+        }, observer)
     }
 
     override fun getItemCount(): Int = items.size

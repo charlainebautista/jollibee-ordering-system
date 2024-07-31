@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jollibee.databinding.ItemsBinding
 
 class ReceiptAdapter(
-    private val items: List<Data>
+    private var items: List<Data>
 ) : RecyclerView.Adapter<ReceiptAdapter.ReceiptViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReceiptViewHolder {
@@ -15,13 +15,13 @@ class ReceiptAdapter(
     }
 
     override fun onBindViewHolder(holder: ReceiptViewHolder, position: Int) {
-        val item = items[position]
-        holder.bind(item)
+        val data = items[position]
+        holder.bind(data)
     }
 
     override fun getItemCount(): Int = items.size
 
-    inner class ReceiptViewHolder(private val binding: ItemsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ReceiptViewHolder(private val binding: ItemsBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Data) {
             binding.receiptItemName.text = data.name
             binding.receiptItemPrice.text = data.price.toString()

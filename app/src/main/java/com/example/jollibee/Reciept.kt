@@ -25,26 +25,22 @@ class Reciept : Fragment() {
             findNavController().navigate(R.id.home2)
         }
 
-
         return binding.root
     }
 
     private fun setupRecyclerView() {
         // Sample data, replace with actual data
         val actualData = listOf(
-            Data(name = "Item 2", price = 10, quantity = 1, imageResId = R.drawable.chickenandburger),
+            Data(name = "Item 1", price = 10, quantity = 1, imageResId = R.drawable.chickenandburger),
             Data(name = "Item 2", price = 20, quantity = 2, imageResId = R.drawable.chickenspag)
         )
-
-
 
         val adapter = ReceiptAdapter(actualData)
         binding.receiptItems.layoutManager = GridLayoutManager(context, 1) // Single column
         binding.receiptItems.adapter = adapter
 
-
         binding.receiptNumitemsText.text = actualData.size.toString()
-        val totalPrice = actualData.sumOf { it.price }
+        val totalPrice = actualData.sumOf { it.price * it.quantity }
         binding.receiptmasterText.text = totalPrice.toString()
     }
 }
