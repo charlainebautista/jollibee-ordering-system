@@ -4,226 +4,357 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:background="#f1f1f1f1">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:iconifiedByDefault="false"
+        android:background="@drawable/searchbar"
+        app:queryHint="Seach for items..."/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#f1f1f1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
         app:layout_constraintVertical_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="115dp"
-            android:layout_marginTop="80dp">
+            android:paddingBottom="100dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jollibee Fried Chickenjoy"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            
-           <GridLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="10dp"
-               android:columnCount="2"
-               android:paddingBottom="10dp"
-               android:rowCount="2">
+                android:textSize="20sp" />
 
-               <androidx.cardview.widget.CardView
-                   android:id="@+id/c1_button"
-                   android:layout_width="150dp"
-                   android:layout_height="wrap_content"
-                   android:layout_row="0"
-                   android:layout_column="0"
-                   app:cardBackgroundColor="#FFFFFF"
-                   android:layout_margin="15dp"
-                   app:cardCornerRadius="10dp">
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:columnCount="2"
+                android:paddingBottom="10dp"
+                android:rowCount="3">
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:gravity="center"
-                       android:orientation="vertical"
-                       android:padding="10dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c1_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
 
-                       <ImageView
-                           android:id="@+id/c1_image"
-                           android:layout_width="match_parent"
-                           android:layout_height="100dp"
-                           android:src="@drawable/onechickenjoy"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                       <TextView
-                           android:id="@+id/c1_text"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="1pc Chickenjoy Solo"
-                           android:textSize="14sp"/>
+                        <ImageView
+                            android:id="@+id/c1_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/onechickenjoy" />
 
-                       <Button
-                           android:id="@+id/orderc1_button"
-                           android:layout_width="120dp"
-                           android:layout_height="28sp"
-                           android:layout_marginTop="30dp"
-                           android:layout_marginBottom="10dp"
-                           android:text="Order Now"
-                           android:textSize="13sp"
-                           android:textColor="#ffffff"
-                           android:textAllCaps="false"
-                           android:background="@drawable/ordernow_button"/>
+                        <TextView
+                            android:id="@+id/c1_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1pc Chickenjoy Solo"
+                            android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/c1price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="99.00" />
 
+                        <Button
+                            android:id="@+id/orderc1_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                   </LinearLayout>
-               </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c3_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
 
-               <androidx.cardview.widget.CardView
-                   android:id="@+id/c2_button"
-                   android:layout_width="150dp"
-                   android:layout_height="wrap_content"
-                   android:layout_row="0"
-                   android:layout_column="1"
-                   app:cardBackgroundColor="#FFFFFF"
-                   android:layout_margin="15dp"
-                   app:cardCornerRadius="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:gravity="center"
-                       android:orientation="vertical"
-                       android:padding="10dp">
+                        <ImageView
+                            android:id="@+id/c3_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/chickenandfries" />
 
-                       <ImageView
-                           android:id="@+id/c2_image"
-                           android:layout_width="match_parent"
-                           android:layout_height="100dp"
-                           android:src="@drawable/chickenandburger" />
-                       <TextView
-                           android:id="@+id/c2_text"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="1pc Chickenjoy w/ Burgery Steak"
-                           android:textSize="14sp"/>
-                       <Button
-                           android:id="@+id/orderc2_button"
-                           android:layout_width="120dp"
-                           android:layout_height="28sp"
-                           android:layout_marginTop="15dp"
-                           android:layout_marginBottom="10dp"
-                           android:text="Order Now"
-                           android:textSize="13sp"
-                           android:textColor="#ffffff"
-                           android:textAllCaps="false"
-                           android:background="@drawable/ordernow_button"/>
-                   </LinearLayout>
-               </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/c3_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1pc Chickenjoy w/ Fries"
+                            android:textSize="14sp" />
 
-               <androidx.cardview.widget.CardView
-                   android:id="@+id/c3_button"
-                   android:layout_width="150dp"
-                   android:layout_height="wrap_content"
-                   android:layout_row="1"
-                   android:layout_column="0"
-                   app:cardBackgroundColor="#FFFFFF"
-                   android:layout_margin="15dp"
-                   app:cardCornerRadius="10dp">
+                        <TextView
+                            android:id="@+id/c3price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="129.00" />
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:gravity="center"
-                       android:orientation="vertical"
-                       android:padding="10dp">
+                        <Button
+                            android:id="@+id/orderc3_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                       <ImageView
-                           android:id="@+id/c3_image"
-                           android:layout_width="match_parent"
-                           android:layout_height="100dp"
-                           android:src="@drawable/chickenandfries" />
-                       <TextView
-                           android:id="@+id/c3_text"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                               android:text="1pc Chickenjoy w/ Fries"
-                           android:textSize="14sp"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c2_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
 
-                       <Button
-                           android:id="@+id/orderc3_button"
-                           android:layout_width="120dp"
-                           android:layout_height="28sp"
-                           android:layout_marginTop="15dp"
-                           android:layout_marginBottom="10dp"
-                           android:text="Order Now"
-                           android:textSize="13sp"
-                           android:textColor="#ffffff"
-                           android:textAllCaps="false"
-                           android:background="@drawable/ordernow_button"/>
-                   </LinearLayout>
-               </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-               <androidx.cardview.widget.CardView
-                   android:id="@+id/c4_button"
-                   android:layout_width="150dp"
-                   android:layout_height="wrap_content"
-                   android:layout_row="1"
-                   android:layout_column="1"
-                   app:cardBackgroundColor="#FFFFFF"
-                   android:layout_margin="15dp"
-                   app:cardCornerRadius="10dp">
+                        <ImageView
+                            android:id="@+id/c2_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/chickenandburger" />
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:gravity="center"
-                       android:orientation="vertical"
-                       android:padding="10dp">
+                        <TextView
+                            android:id="@+id/c2_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1pc Chickenjoy w/ Burgery Steak"
+                            android:textSize="14sp" />
 
-                       <ImageView
-                           android:id="@+id/c4_image"
-                           android:layout_width="match_parent"
-                           android:layout_height="100dp"
-                           android:src="@drawable/twochicken" />
-                       <TextView
-                           android:id="@+id/c4_text"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="2pc Chickenjoy Solo"
-                           android:textSize="14sp"/>
+                        <TextView
+                            android:id="@+id/c2price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="139.00" />
 
-                       <Button
-                           android:id="@+id/orderc4_button"
-                           android:layout_width="120dp"
-                           android:layout_height="28sp"
-                           android:layout_marginTop="30dp"
-                           android:layout_marginBottom="10dp"
-                           android:text="Order Now"
-                           android:textSize="13sp"
-                           android:textColor="#ffffff"
-                           android:textAllCaps="false"
-                           android:background="@drawable/ordernow_button"/>
+                        <Button
+                            android:id="@+id/orderc2_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                   </LinearLayout>
-               </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c4_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
 
-           </GridLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/c4_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/twochicken" />
+
+                        <TextView
+                            android:id="@+id/c4_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2pc Chickenjoy Solo"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/c4price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="195.00" />
+
+                        <Button
+                            android:id="@+id/orderc4_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c5_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/c5_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/twochicken" />
+
+                        <TextView
+                            android:id="@+id/c5_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2pc Chickenjoy Solo"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/c5price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="195.00" />
+
+                        <Button
+                            android:id="@+id/orderc5_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/c6_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/c6_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/twochicken" />
+
+                        <TextView
+                            android:id="@+id/c6_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2pc Chickenjoy Solo"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/c6price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="195.00" />
+
+                        <Button
+                            android:id="@+id/orderc6_button"
+                            android:layout_width="120dp"
+                            android:layout_height="28sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ordernow_button"
+                            android:text="Add to cart"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
 
         </LinearLayout>
 
-
     </ScrollView>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

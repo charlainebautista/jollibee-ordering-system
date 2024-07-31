@@ -6,19 +6,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jollibee.databinding.CartBinding
 
 class MVMenuAdapter(
-    private val dataset: MutableList<Data> = mutableListOf(),
-    private val onDataClick : (data:Data)-> Unit
+    private var items: MutableList<Data>,
+    private val onQuantityChanged: (MutableList<Data>) -> Unit
 ) : RecyclerView.Adapter<ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(CartBinding.inflate(LayoutInflater.from(parent.context)))
-    }
 
-    override fun getItemCount(): Int {
-        return dataset.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = CartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataset[position], onDataClick)
+        val data = items[position]
+        holder.bind(data) {
+
+            notifyDataSetChanged()
+            onQuantityChanged(items)
+        }
     }
 
+    override fun getItemCount(): Int = items.size
+
+    fun getItems(): MutableList<Data> = items
 }

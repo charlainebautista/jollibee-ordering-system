@@ -5,33 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Order"
-    android:orientation="vertical"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#f1f1f1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="#f1f1f1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:background="#f1f1f1"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,7 +48,6 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:listitem="@layout/cart" />
 
-
         </LinearLayout>
 
     </ScrollView>
@@ -70,8 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="#ffffff"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,72 +68,79 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/detailsTotalItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="30dp"
-                android:text="Total Items:"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:layout_marginEnd="30dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                android:text="Subtotal:"/>
+                android:text="Total Items:" />
 
             <TextView
+                android:id="@+id/detailsTotalItemsValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="99.00"
-                android:layout_marginEnd="30dp"/>
+                android:layout_marginEnd="30dp"
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/detailsSubtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="30dp"
-                android:text="Total:"/>
+                android:layout_weight="1"
+                android:text="Subtotal:" />
 
             <TextView
+                android:id="@+id/detailsSubtotalValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="99.00"
-                android:layout_marginEnd="30dp"/>
+                android:layout_marginEnd="30dp"
+                android:text="0.00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/detailsTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="Total:" />
+
+            <TextView
+                android:id="@+id/detailsTotalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:text="0.00" />
         </LinearLayout>
 
         <Button
             android:id="@+id/placeOrder_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Place Order"
-            android:paddingHorizontal="100dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/placeorder"
+            android:paddingHorizontal="100dp"
+            android:text="Place Order"
             android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:background="@drawable/placeorder"/>
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </LinearLayout>

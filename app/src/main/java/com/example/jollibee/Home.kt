@@ -22,7 +22,19 @@ class Home : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.orderc1Button.setOnClickListener{
             findNavController().navigate(R.id.order)
-            orderViewModel.orderList.add(Data( name = "Lorem Ipsum", price = 99, quantity = 1))
+            orderViewModel.orderList.add(Data(  imageResId = R.drawable.onechickenjoy, name = "1pc Chickenjoy Solo", price = 99, quantity = 1))
+        }
+        binding.orderc2Button.setOnClickListener {
+            findNavController().navigate(R.id.order)
+            orderViewModel.orderList.add(Data(  imageResId = R.drawable.twochicken, name = "2pc Chickenjoy Solo", price = 195, quantity = 1))
+        }
+        binding.orderc3Button.setOnClickListener {
+            findNavController().navigate(R.id.order)
+            orderViewModel.orderList.add(Data(  imageResId = R.drawable.chickenandburger, name = "1pc Chickenjoy w/ Burger Steak", price = 139, quantity = 1))
+        }
+        binding.orderc4Button.setOnClickListener {
+            findNavController().navigate(R.id.order)
+            orderViewModel.orderList.add(Data(  imageResId = R.drawable.chickenandfries, name = "1pc Chickenjoy w/ Fries", price = 129, quantity = 1))
         }
 
 
