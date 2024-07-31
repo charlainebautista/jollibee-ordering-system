@@ -47,12 +47,11 @@ class Order : Fragment() {
         try {
             val actualData = orderViewModel.orderList
 
-            adapter = MVMenuAdapter(actualData, { updatedItems ->
-                updateTotals()
-            }, { item ->
+            adapter = MVMenuAdapter(actualData, {updateTotals()}, {item->
+                if (item.quantity <= 0)
 
                 orderViewModel.orderList.remove(item)
-                adapter.notifyDataSetChanged()
+
             })
 
             binding.cartList.layoutManager = GridLayoutManager(context, 1)
