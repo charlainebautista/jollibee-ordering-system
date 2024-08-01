@@ -21,20 +21,80 @@ class Home : Fragment() {
         orderViewModel = ViewModelProvider(requireActivity())[OrderViewModel::class.java]
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.orderc1Button.setOnClickListener{
+            val data = Data(imageResId = R.drawable.onechickenjoy, name = "1pc Chickenjoy Solo", price = 99, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
             findNavController().navigate(R.id.order)
-            orderViewModel.orderList.add(Data(  imageResId = R.drawable.onechickenjoy, name = "1pc Chickenjoy Solo", price = 99, quantity = 1))
         }
         binding.orderc2Button.setOnClickListener {
+            val data = Data(imageResId = R.drawable.twochicken, name = "2pc Chickenjoy Solo", price = 195, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
             findNavController().navigate(R.id.order)
-            orderViewModel.orderList.add(Data(  imageResId = R.drawable.twochicken, name = "2pc Chickenjoy Solo", price = 195, quantity = 1))
         }
+
         binding.orderc3Button.setOnClickListener {
+            val data = Data(imageResId = R.drawable.chickenandburger, name = "1pc Chickenjoy w/ Burger Steak", price = 139, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
             findNavController().navigate(R.id.order)
-            orderViewModel.orderList.add(Data(  imageResId = R.drawable.chickenandburger, name = "1pc Chickenjoy w/ Burger Steak", price = 139, quantity = 1))
         }
+
         binding.orderc4Button.setOnClickListener {
+            val data = Data(imageResId = R.drawable.chickenandfries, name = "1pc Chickenjoy w/ Fries", price = 129, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
             findNavController().navigate(R.id.order)
-            orderViewModel.orderList.add(Data(  imageResId = R.drawable.chickenandfries, name = "1pc Chickenjoy w/ Fries", price = 129, quantity = 1))
+        }
+
+        binding.orderc5Button.setOnClickListener {
+            val data = Data(imageResId = R.drawable.chickenfloat, name = "1pc Chickenjoy w/ Coke Float", price = 149, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
+            findNavController().navigate(R.id.order)
+        }
+
+        binding.orderc6Button.setOnClickListener {
+            val data = Data(imageResId = R.drawable.chickenpalabok, name = "1pc Chickenjoy w/ Palabok", price = 129, quantity = 1)
+
+            if (orderViewModel.exists(data)){
+                val index = orderViewModel.orderList.indexOfFirst { it.name == data.name }
+                orderViewModel.orderList[index].quantity +=1
+            }else{
+                orderViewModel.orderList.add(data)
+            }
+
+            findNavController().navigate(R.id.order)
         }
 
 

@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/reciept"
-        android:name="com.example.jollibee.Reciept"
+        android:name="com.example.jollibee.Receipt"
         android:label="fragment_reciept"
         tools:layout="@layout/fragment_reciept" >
         <action

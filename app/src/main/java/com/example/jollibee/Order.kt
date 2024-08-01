@@ -1,5 +1,6 @@
 package com.example.jollibee
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,10 +35,13 @@ class Order : Fragment() {
 
         binding.placeOrderButton.setOnClickListener {
             try {
-                findNavController().navigate(R.id.reciept)
+                showConfirmationDialog()
             } catch (e: Exception) {
                 Log.e("OrderFragment", "Error navigating to receipt", e)
             }
+        }
+        binding.addmoreButton.setOnClickListener{
+            findNavController().navigate(R.id.home2)
         }
 
         return binding.root
@@ -80,4 +84,21 @@ class Order : Fragment() {
             Log.e("OrderFragment", "Error updating totals", e)
         }
     }
+    private fun showConfirmationDialog() {
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+        dialogBuilder.setTitle("Confirm Order")
+        dialogBuilder.setMessage("Are you sure you want to proceed?")
+        dialogBuilder.setPositiveButton("Yes") { _, _ ->
+            try {
+                findNavController().navigate(R.id.reciept)
+            } catch (e: Exception) {
+                Log.e("OrderFragment", "Error navigating to receipt", e)
+            }
+        }
+        dialogBuilder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+        dialogBuilder.create().show()
+    }
 }
+

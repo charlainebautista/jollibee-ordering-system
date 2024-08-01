@@ -17,6 +17,9 @@ class ReceiptAdapter(
     override fun onBindViewHolder(holder: ReceiptViewHolder, position: Int) {
         val data = items[position]
         holder.bind(data)
+
+
+
     }
 
     override fun getItemCount(): Int = items.size
