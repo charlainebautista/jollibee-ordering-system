@@ -24,10 +24,12 @@ class Receipt : Fragment() {
     ): View? {
         binding = FragmentRecieptBinding.inflate(inflater, container, false)
 
+
         orderViewModel = ViewModelProvider(requireActivity())[OrderViewModel::class.java]
         setupRecyclerView()
 
         binding.orderAgainButton.setOnClickListener {
+            orderViewModel.orderList.clear()
             findNavController().navigate(R.id.home2)
         }
 
